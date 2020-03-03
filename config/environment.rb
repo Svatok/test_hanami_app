@@ -2,10 +2,10 @@ require 'bundler/setup'
 require 'hanami/setup'
 require 'hanami/middleware/body_parser'
 require_relative '../lib/test_hanami_app'
-require_relative '../apps/web/application'
+require_relative '../apps/api/application'
 
 Hanami.configure do
-  mount Web::Application, at: '/'
+  mount Api::Application, at: '/'
 
   mailer do
     root 'lib/test_hanami_app/mailers'

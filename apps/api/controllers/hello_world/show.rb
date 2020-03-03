@@ -1,8 +1,8 @@
-module Web
+module Api
   module Controllers
     module HelloWorld
       class Show
-        include ::Web::Action
+        include ::Api::Action
         accept :json
 
         def call(params)
