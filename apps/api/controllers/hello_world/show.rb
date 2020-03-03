@@ -6,10 +6,10 @@ module Api
         accept :json
 
         def call(params)
-          result = TestHanamiApp::Repositories[:HelloWorld].find_by(name: params[:name])
+          result = Api::Concepts::HelloWorld::Operation::Show.call(params: params)
 
-          if result
-            status 201, result.attributes.to_json
+          if result.success?
+            status 201, result[:model].attributes.to_json
           else
             status 404, ''
           end
