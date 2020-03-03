@@ -1,10 +1,15 @@
 source 'https://rubygems.org'
 
 gem 'rake'
-gem 'hanami',       '~> 1.3'
-gem 'hanami-model', '~> 1.3'
+gem 'hanami', '~> 1.3'
+gem 'hanami-validations', '~> 2.0.alpha'
+
+gem "rom",     "~> 5.0"
+gem "rom-sql", "~> 3.0"
 
 gem 'pg'
+
+gem 'puma'
 
 group :development do
   # Code reloading

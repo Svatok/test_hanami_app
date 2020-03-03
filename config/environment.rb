@@ -1,31 +1,10 @@
 require 'bundler/setup'
 require 'hanami/setup'
-require 'hanami/model'
 require_relative '../lib/test_hanami_app'
 require_relative '../apps/web/application'
 
 Hanami.configure do
   mount Web::Application, at: '/'
-
-  model do
-    ##
-    # Database adapter
-    #
-    # Available options:
-    #
-    #  * SQL adapter
-    #    adapter :sql, 'sqlite://db/test_hanami_app_development.sqlite3'
-    #    adapter :sql, 'postgresql://localhost/test_hanami_app_development'
-    #    adapter :sql, 'mysql://localhost/test_hanami_app_development'
-    #
-    adapter :sql, ENV.fetch('DATABASE_URL')
-
-    ##
-    # Migrations
-    #
-    migrations 'db/migrations'
-    schema     'db/schema.sql'
-  end
 
   mailer do
     root 'lib/test_hanami_app/mailers'
@@ -46,4 +25,6 @@ Hanami.configure do
       delivery :smtp, address: ENV.fetch('SMTP_HOST'), port: ENV.fetch('SMTP_PORT')
     end
   end
+
+  early_hints true
 end
