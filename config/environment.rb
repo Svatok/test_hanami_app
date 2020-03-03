@@ -1,5 +1,6 @@
 require 'bundler/setup'
 require 'hanami/setup'
+require 'hanami/middleware/body_parser'
 require_relative '../lib/test_hanami_app'
 require_relative '../apps/web/application'
 
@@ -26,5 +27,6 @@ Hanami.configure do
     end
   end
 
+  middleware.use Hanami::Middleware::BodyParser, :json
   early_hints true
 end

@@ -9,6 +9,10 @@ module TestHanamiApp
         super(Persistence.db)
       end
 
+      def find_by(conditions)
+        root.where(conditions).first
+      end
+
       def all
         root.to_a
       end
