@@ -12,6 +12,8 @@ gem 'pg'
 gem 'puma'
 gem 'trailblazer', '~> 2.1'
 
+gem 'concurrent-ruby', '~> 1.0'
+
 group :development do
   # Code reloading
   # See: https://guides.hanamirb.org/projects/code-reloading
