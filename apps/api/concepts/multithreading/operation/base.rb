@@ -13,6 +13,10 @@ module Api
           def sleep_action(params)
             sleep(params[:sleep].to_f || DEFAULT_SLEEP)
           end
+
+          def counting_action(params)
+            2**1_000_000
+          end
         end
       end
     end
