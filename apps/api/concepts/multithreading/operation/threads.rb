@@ -2,7 +2,9 @@ module Api
   module Concepts
     module Multithreading
       module Operation
-        class Threads < Base
+        class Threads < Trailblazer::Operation
+          include Api::Concepts::Multithreading::Lib::PerformAction
+
           step :generate_threads
           step :wait_for_threads_finish
 

@@ -2,7 +2,9 @@ module Api
   module Concepts
     module Multithreading
       module Operation
-        class ConcurrentThreads < Base
+        class ConcurrentThreads < Trailblazer::Operation
+          include Api::Concepts::Multithreading::Lib::PerformAction
+
           step :generate_threads
 
           DEFAULT_COUNT = 10

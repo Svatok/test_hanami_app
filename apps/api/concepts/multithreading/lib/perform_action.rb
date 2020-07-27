@@ -1,8 +1,8 @@
 module Api
   module Concepts
     module Multithreading
-      module Operation
-        class Base < Trailblazer::Operation
+      module Lib
+        module PerformAction
           DEFAULT_SLEEP = 1
           DEFAULT_ACTION = 'sleep'
 

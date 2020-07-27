@@ -2,7 +2,9 @@ module Api
   module Concepts
     module Multithreading
       module Operation
-        class Fibers < Base
+        class Fibers < Trailblazer::Operation
+          include Api::Concepts::Multithreading::Lib::PerformAction
+
           step :generate_fibers
 
           DEFAULT_COUNT = 100
